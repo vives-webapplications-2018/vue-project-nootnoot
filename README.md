@@ -26,3 +26,11 @@ When a pixel is colored client-side, a post request is sent.
 
 The server keeps a current state and a history of every change to the canvas.
 These transactions include coordinates, color, author and date.
+
+## original idea from place
+
+Place was a collaborative project and social experiment hosted on the social networking site Reddit that began on April Fools' Day 2017. The experiment involved an online canvas of one million (1000x1000) pixel squares, located at a subreddit called /r/place, which registered users could edit by changing the color of a single pixel from a 16-colour palette. After each pixel was placed, a timer prevented the user from placing any pixels for a period of time varying from 5 to 20 minutes.[1]
+
+The experiment was ended by Reddit administrators around 72 hours after its creation, on 3 April 2017.[2] Over 1 million unique users edited the canvas, placing a total of approximately 16 million tiles, and, at the time the experiment was ended, had over 90,000 users viewing or editing it.[3] The Place subreddit was archived on 19 April 2017.
+
+our idea is the same but a bit smaller and you are able to submit your pixel to the led pixel board.
