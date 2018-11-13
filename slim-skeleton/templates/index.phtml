@@ -10,11 +10,33 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     </head>
     <body>
-        <h1>PIXLs</h1>
-        <?php if (isset($name)) : ?>
-            <h2>Hello <?= htmlspecialchars($name); ?>!</h2>
-        <?php else: ?>
-            <p>Try <a href="http://www.slimframework.com">SlimFramework</a></p>
-        <?php endif; ?>
+    <nav>
+  <div class="nav-wrapper">
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="">what</a></li>
+      <li><a href="">why</a></li>
+    </ul>
+  </div>
+</nav>
+    <div class="container">
+        <h1 class="center-align">PIXL</h1>
+
+
+        <canvas id="myCanvas" width="96" height="64" style="border:1px solid #d3d3d3;">
+        </canvas>
+
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            
+            
+
+
+
+            
+        </script>
+
+
+    </div>
     </body>
 </html>
