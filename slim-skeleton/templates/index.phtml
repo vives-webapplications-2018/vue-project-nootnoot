@@ -8,13 +8,25 @@
 
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
+        <!-- development version, includes helpful console warnings -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     </head>
     <body>
         <h1>PIXLs</h1>
-        <?php if (isset($name)) : ?>
-            <h2>Hello <?= htmlspecialchars($name); ?>!</h2>
-        <?php else: ?>
-            <p>Try <a href="http://www.slimframework.com">SlimFramework</a></p>
-        <?php endif; ?>
+
+     <div id="pic"></div>
+     <img src="abc.jpg">
+     </div>
+     <div id="button">
+     <input type="submit" value ="go"></input>
+     </div>
+     
+    <div id="app">
+        <h1>{{ message }}</h1>
+    </div>
+    <script type="text/javascript" src="javascript/vue.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
     </body>
 </html>
