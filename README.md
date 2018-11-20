@@ -34,3 +34,10 @@ Place was a collaborative project and social experiment hosted on the social net
 The experiment was ended by Reddit administrators around 72 hours after its creation, on 3 April 2017.[2] Over 1 million unique users edited the canvas, placing a total of approximately 16 million tiles, and, at the time the experiment was ended, had over 90,000 users viewing or editing it.[3] The Place subreddit was archived on 19 April 2017.
 
 our idea is the same but a bit smaller and you are able to submit your pixel to the led pixel board.
+
+## How will we add facebook accounts?
+
+I'll be using the information on the following link : https://www.socialmediaexaminer.com/how-to-use-facebook-login-on-your-website/
+We'll have to make a facebook account for fevelopers.
+The app will be sincronized to my private facebook-account because i'm the developer. We have already our app id which is : 503882900117623 .
+
