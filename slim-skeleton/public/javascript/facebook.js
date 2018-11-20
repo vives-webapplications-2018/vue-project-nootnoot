@@ -12,3 +12,8 @@ var response = new Vue (
         userID: '...'
     }
 })
+function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
