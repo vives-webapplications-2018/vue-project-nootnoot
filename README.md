@@ -39,3 +39,5 @@ our idea is the same but a bit smaller and you are able to submit your pixel to 
 
 I'll be using the information on the following link : https://www.socialmediaexaminer.com/how-to-use-facebook-login-on-your-website/
 We'll have to make a facebook account for fevelopers.
+The app will be sincronized to my private facebook-account because i'm the developer. We have already our app id which is : 503882900117623 .
+
