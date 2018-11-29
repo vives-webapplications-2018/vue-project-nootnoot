@@ -1,6 +1,6 @@
 
 
-Vue.use(VueMqtt.default, 'mqtt://mqtt.labict.be:1884')
+Vue.use(VueMqtt.default, 'ws://broker.hivemq.com:8000/mqtt') //mqtt://mqtt.labict.be:1884
 
 Vue.config.productionTip = false
 
@@ -8,38 +8,25 @@ Vue.config.productionTip = false
 
 var vm = new Vue({
   el: '#vm',
+  data: {
+      buff: 'Sub1:<br>'
+  },
   methods: {
     subscribe () {
-      this.$mqtt.subscribe('vue-project-nootnoot/test')
+      this.$mqtt.subscribe('mitsuruog')
       console.log('subscribe')
     },
-    message (){
-
-    },
     publish () {
-      this.$mqtt.publish('vue-project-nootnoot/test', message)
+      this.$mqtt.publish('mitsuruog', document.getElementById("canvas").value)
       console.log('publich')
+      console.log(document.getElementById("canvas").value)
     }
   },
-  data: {
-    message:1
-  }
-  mqtt: {
-    'vue-project-nootnoot/test' (data, topic) {
-      console.log(topic + ': ' + String.fromCharCode.apply(null, data))
-    }
     
-  },
-    data () {
-      return {
-        buff: 'Sub1:<br>'
-      }
-    },
     mqtt: {
-      /** 'VueMqtt/publish1' or '+/publish1' */
-      'vue-project-nootnoot/test' (data) {
-        this.buff = this.buff + data + '<br>'
+      'mitsuruog' (canvas) {
+        this.buff = this.buff + canvas + '<br>'
       }
     }
-
 })
+

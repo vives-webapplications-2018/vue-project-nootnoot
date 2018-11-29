@@ -66,14 +66,13 @@
 
     <div id="vm">
     <button @click="subscribe">subscribe</button>
-    <input cvlass="input-topic-pub" type="text" >
     <button @click="publish">Publish</button>
-    <div class=="messages"></div>
-
-    <p>Message is: {{ message }}</p>
-
-    </div>
+    <div class="sub" v-html="buff"></div>
+    <input type="text" v-model="canvas" id="canvas">
+<p>Message is: {{ canvas }}</p>
     
+    </div>
+
     <script type="text/javascript" src="javascript/vue.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     </body>
