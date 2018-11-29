@@ -9,6 +9,7 @@ Vue.config.productionTip = false
 var vm = new Vue({
   el: '#vm',
   data: {
+
       buff: 'Sub1:<br>'
   },
   methods: {
@@ -17,15 +18,15 @@ var vm = new Vue({
       console.log('subscribe')
     },
     publish () {
-      this.$mqtt.publish('mitsuruog', document.getElementById("canvas").value)
-      console.log('publich')
-      console.log(document.getElementById("canvas").value)
+      this.$mqtt.publish('mitsuruog', document.getElementById("text").value)
+      console.log('publish')
+      console.log(document.getElementById("text").value)
     }
   },
     
     mqtt: {
-      'mitsuruog' (canvas) {
-        this.buff = this.buff + canvas + '<br>'
+      'mitsuruog' (text) {
+        this.buff = this.buff + text + '<br>'
       }
     }
 })

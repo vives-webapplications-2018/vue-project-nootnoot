@@ -26,15 +26,52 @@
         <h1 class="center-align">PIXL</h1>
 
 
-        <canvas id="myCanvas" width="96" height="64" style="border:1px solid #d3d3d3;">
+        <canvas id="canvas" width="960" height="540">
         </canvas>
 
+        <button id = "button" class="btn waves-effect waves-light" type="submit" name="action">Submit
+        </button>
+
+        <form>
+        color: <input id ="colorselect" type="text" value="green"><br>
+        x: <input id ="userpixx" type="text" value="940"><br>
+        y: <input id ="userpixy" type="text" value="530"><br>
+
+        </form>
+        
+        
+
         <script>
-            var c = document.getElementById("myCanvas");
-            var ctx = c.getContext("2d");
-            
-            
+
+         
+
+
+
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        
+            document.getElementById("button").onclick = function(){            
+            var userColor = document.getElementById("colorselect").value;
+            var userpixx = document.getElementById("userpixx").value;
+            var userpixy = document.getElementById("userpixy").value;
+            ctx.fillStyle = userColor;
+            ctx.fillRect(userpixx, userpixy, 10, 10);
+            };
+        
+        
+
+
+
         </script>
+        
+        <div id="vm">
+            <button @click="subscribe">subscribe</button>
+            <button @click="publish">Publish</button>
+            <div class="sub" v-html="buff"></div>
+            <input type="text" id="text"> 
+        </div>
+
+<!--     
         //de script voor facebook kan nog niet werken omdat we nog geen originele URL hebben voor onze app.
         <script>
         /*           window.fbAsyncInit = function() {
@@ -64,14 +101,9 @@
         onlogin="checkLoginState();">
         </fb:login-button>
 
-    <div id="vm">
-    <button @click="subscribe">subscribe</button>
-    <button @click="publish">Publish</button>
-    <div class="sub" v-html="buff"></div>
-    <input type="text" v-model="canvas" id="canvas">
-<p>Message is: {{ canvas }}</p>
     
-    </div>
+     -->
+
 
     <script type="text/javascript" src="javascript/vue.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
