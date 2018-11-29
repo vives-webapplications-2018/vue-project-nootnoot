@@ -11,6 +11,7 @@
         
         <!-- development version, includes helpful console warnings -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src=https://cdn.jsdelivr.net/npm/vue-mqtt@2.0.3/dist/build.min.js></script>
     </head>
     <body>
     <nav>
@@ -55,12 +56,19 @@
                 js.src = "https://connect.facebook.net/en_US/sdk.js";
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
+            */
         </script>
 
+    <div id="vm">
+    <button @click="subscribe">subscribe</button>
+    <input cvlass="input-topic-pub" type="text" >
+    <button @click="publish">Publish</button>
+    <div class=="messages"></div>
+
+    <p>Message is: {{ message }}</p>
+
     </div>
-    <div id="app">
-        My name is <input v-model="name">
-    </div>
+    
     <script type="text/javascript" src="javascript/vue.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     </body>
