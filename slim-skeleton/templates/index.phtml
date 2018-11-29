@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8"/>
-        <title>Slim 3</title>
+        <title>Canvas painter</title>
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
@@ -58,6 +58,11 @@
             }(document, 'script', 'facebook-jssdk'));
             */
         </script>
+        
+        <fb:login-button 
+        scope="public_profile,email"
+        onlogin="checkLoginState();">
+        </fb:login-button>
 
     <div id="vm">
     <button @click="subscribe">subscribe</button>
