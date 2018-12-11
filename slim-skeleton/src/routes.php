@@ -6,10 +6,6 @@ use Slim\Http\Response;
 // Routes
 
 $app->get('/', function (Request $request, Response $response, array $args) {
-
-
-    $image = file_get_contents('newfile.png');
-    echo $image;
     // Render index view
     return $this->renderer->render($response, 'index.phtml', $args);
 

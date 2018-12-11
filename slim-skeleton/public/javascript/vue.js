@@ -48,7 +48,7 @@ var userColor = document.getElementById("colorselect").value;
 var userpixx = document.getElementById("userpixx").value;
 var userpixy = document.getElementById("userpixy").value;
 ctx.fillStyle = userColor;
-ctx.fillRect(userpixx, userpixy, 10, 10);
+ctx.fillRect(userpixx, userpixy, 1, 1);
 };
 
 //canvas to json 
