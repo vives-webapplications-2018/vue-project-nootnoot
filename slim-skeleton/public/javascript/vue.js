@@ -34,6 +34,14 @@ var vm = new Vue({
 // canvas tekenen pixels
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+
+  // load image from data url
+  var imageObj = new Image();
+  imageObj.onload = function() {
+    ctx.drawImage(this, 0, 0);
+  };
+  imageObj.src = "image.png";
+
         
 document.getElementById("button").onclick = function(){            
 var userColor = document.getElementById("colorselect").value;
@@ -54,7 +62,7 @@ document.getElementById('button').addEventListener('click', function () {
   var data = { image: canvasContents, date: Date.now() };
   var string = JSON.stringify(data);
 
-  // 
+  // send json to server 
 fetch('/submit',{
 method: 'POST',
 body: string,
@@ -72,13 +80,3 @@ document.getElementById('load').addEventListener('change', function () {
   }
 });
 
-// this function executes when the contents of the file have been fetched
-reader.onload = function () {
-  var data = JSON.parse(reader.result);
-  var image = new Image();
-  image.onload = function () {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(image, 0, 0); // draw the new image to the screen
-  }
-  image.src = data.image; // data.image contains the data URL
-};

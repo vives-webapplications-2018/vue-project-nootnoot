@@ -6,9 +6,10 @@ use Slim\Http\Response;
 // Routes
 
 $app->get('/', function (Request $request, Response $response, array $args) {
-    // Sample log message
-    $this->logger->info("Slim-Skeleton '/' route");
 
+
+    $image = file_get_contents('newfile.png');
+    echo $image;
     // Render index view
     return $this->renderer->render($response, 'index.phtml', $args);
 
@@ -18,7 +19,7 @@ $app->post('/submit', function (Request $request, Response $response, array $arg
    
     $body = $request->getParsedBody();
 
-    $myfile = fopen("newfile.png", "w") or die("Unable to open file!");
+    $myfile = fopen("public\image.png", "w") or die("Unable to open file!");
 
     $data = explode( ',', $body['image'] );
 
