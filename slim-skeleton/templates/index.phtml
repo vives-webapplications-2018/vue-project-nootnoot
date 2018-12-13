@@ -12,6 +12,9 @@
         <!-- development version, includes helpful console warnings -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src=https://cdn.jsdelivr.net/npm/vue-mqtt@2.0.3/dist/build.min.js></script>
+
+        <link rel="stylesheet" href="style.css">
+
     </head>
     <body>
     <nav>
@@ -23,21 +26,18 @@
   </div>
 </nav>
     <div class="container">
-        <h1 class="center-align">PIXL</h1>
+      <h1 class="center-align">PIXL</h1>
 
 
-        <canvas id="canvas" width="960" height="540">
-        </canvas>
-
+      <canvas id="canvas" width="96" height="64" >
+      </canvas>
+    
         <button id = "button" class="btn waves-effect waves-light" type="submit" name="action">Submit
         </button>
-        <button id = "save" class="btn waves-effect waves-light" type="save" name="action">save
-        </button>
-        <button id = "load" class="btn waves-effect waves-light" type="load" name="action">load
-        </button>
 
-        <form>
+      <form>
         color: <input id ="colorselect" type="text" value="green"><br>
+<<<<<<< HEAD
         x: <input id ="userpixx" type="text" value="940"><br>
         y: <input id ="userpixy" type="text" value="530"><br>
 
@@ -130,8 +130,22 @@
     
      -->
 
+=======
+        x: <input id ="userpixx" type="text" value="20"><br>
+        y: <input id ="userpixy" type="text" value="20"><br>
+      </form>
+        
+      <div id="vm">
+        <button @click="subscribe">subscribe</button>
+        <button @click="publish">Publish</button>
+        <div class="sub" v-html="buff"></div>
+        <input type="text" id="text"> 
+      </div>
+      <button id = "load" class="btn waves-effect waves-light" type="load" name="action">load</button>
+>>>>>>> 93071c61071db6628ec5ad1f84b0262151d84458
 
     <script type="text/javascript" src="javascript/vue.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+
     </body>
 </html>
