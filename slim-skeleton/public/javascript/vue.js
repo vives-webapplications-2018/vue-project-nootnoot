@@ -10,45 +10,45 @@ var vm = new Vue({
   el: '#vm',
   data: {
 
-      buff: 'Sub1:<br>'
+    buff: 'Sub1:<br>'
   },
   methods: {
-    subscribe () {
+    subscribe() {
       this.$mqtt.subscribe('mitsuruog')
       console.log('subscribe')
     },
-    publish () {
+    publish() {
       this.$mqtt.publish('mitsuruog', document.getElementById("text").value)
       console.log('publish')
       console.log(document.getElementById("text").value)
     }
   },
-    
-    mqtt: {
-      'mitsuruog' (text) {
-        this.buff = this.buff + text + '<br>'
-      }
+
+  mqtt: {
+    'mitsuruog'(text) {
+      this.buff = this.buff + text + '<br>'
     }
+  }
 })
 
 // canvas tekenen pixels
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-  // load image from data url
-  var imageObj = new Image();
-  imageObj.onload = function() {
-    ctx.drawImage(this, 0, 0);
-  };
-  imageObj.src = "image.png";
+// load image from data url
+var imageObj = new Image();
+imageObj.onload = function () {
+  ctx.drawImage(this, 0, 0);
+};
+imageObj.src = "image.png";
 
-        
-document.getElementById("button").onclick = function(){            
-var userColor = document.getElementById("colorselect").value;
-var userpixx = document.getElementById("userpixx").value;
-var userpixy = document.getElementById("userpixy").value;
-ctx.fillStyle = userColor;
-ctx.fillRect(userpixx, userpixy, 1, 1);
+
+document.getElementById("button").onclick = function () {
+  var userColor = document.getElementById("colorselect").value;
+  var userpixx = document.getElementById("userpixx").value;
+  var userpixy = document.getElementById("userpixy").value;
+  ctx.fillStyle = userColor;
+  ctx.fillRect(userpixx, userpixy, 1, 1);
 };
 
 //canvas to json 
@@ -63,13 +63,13 @@ document.getElementById('button').addEventListener('click', function () {
   var string = JSON.stringify(data);
 
   // send json to server 
-fetch('/submit',{
-method: 'POST',
-body: string,
-headers: { "Content-Type": "application/json; charset=utf-8" }
-})
+  fetch('/submit', {
+    method: 'POST',
+    body: string,
+    headers: { "Content-Type": "application/json; charset=utf-8" }
+  })
 
-  
+
 });
 
 // event handler for the load button
@@ -80,3 +80,8 @@ document.getElementById('load').addEventListener('change', function () {
   }
 });
 
+//event handler for the what why buttons
+// document.getElementById("what").addEventListener("click", function() {
+//   window.location.href='README.md';
+
+// });

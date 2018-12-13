@@ -1,151 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8"/>
-        <title>Canvas painter</title>
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <head>
+      <meta charset="utf-8"/>
+      <title>pixl</title>
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <!-- development version, includes helpful console warnings -->
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <script src=https://cdn.jsdelivr.net/npm/vue-mqtt@2.0.3/dist/build.min.js></script>
+      <link rel="stylesheet" href="style.css">
+   </head>
 
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        
-        <!-- development version, includes helpful console warnings -->
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src=https://cdn.jsdelivr.net/npm/vue-mqtt@2.0.3/dist/build.min.js></script>
+   <body>
+      <nav>
+         <div class="nav-wrapper">
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+               <li><a href="README.html">what</a></li>
+               <li><a href="whynot.jpg">why</a></li>
+            </ul>
+         </div>
+      </nav>
 
-        <link rel="stylesheet" href="style.css">
-
-    </head>
-    <body>
-    <nav>
-  <div class="nav-wrapper">
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="">what</a></li>
-      <li><a href="">why</a></li>
-    </ul>
-  </div>
-</nav>
-    <div class="container">
+      <div class="container">
       <h1 class="center-align">PIXL</h1>
-
-
       <canvas id="canvas" width="96" height="64" >
       </canvas>
-    
-        <button id = "button" class="btn waves-effect waves-light" type="submit" name="action">Submit
-        </button>
+
+      <button id = "button" class="btn waves-effect waves-light" type="submit" name="action">Submit
+      </button>
 
       <form>
-        color: <input id ="colorselect" type="text" value="green"><br>
-<<<<<<< HEAD
-        x: <input id ="userpixx" type="text" value="940"><br>
-        y: <input id ="userpixy" type="text" value="530"><br>
-
-        </form>
-        
-        
-
-        <script>
-
-         
-
-
-
-        const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
-        
-
-
-           
-
-            document.getElementById("button").onclick = function drawCanvas(){            
-            var userColor = document.getElementById("colorselect").value;
-            var userpixx = document.getElementById("userpixx").value;
-            var userpixy = document.getElementById("userpixy").value;
-            ctx.fillStyle = userColor;
-            ctx.fillRect(userpixx, userpixy, 10, 10);
-            };
-
-
-            canvas.addEventListener("mousedown", getPosition, false);
-
-            function getPosition()
-            {
-            var x = event.x;
-            var y = event.y;
-
-            var canvas = document.getElementById("canvas");
-
-            x -= canvas.offsetLeft;
-            y -= canvas.offsetTop;
-            
-
-            //alert("x:" + x + " y:" + y);
-            }
-            
-            
-        
-
-
-
-        </script>
-        
-        <div id="vm">
-            <button @click="subscribe">subscribe</button>
-            <button @click="publish">Publish</button>
-            <div class="sub" v-html="buff"></div>
-            <input type="text" id="text"> 
-        </div>
-
-<!--     
-        //de script voor facebook kan nog niet werken omdat we nog geen originele URL hebben voor onze app.
-        <script>
-        /*           window.fbAsyncInit = function() {
-                FB.init({
-                appId      : '{your-app-id}',
-                cookie     : true,
-                xfbml      : true,
-                version    : '{api-version}'
-                });
-                
-                FB.AppEvents.logPageView();   
-                
-            };
-
-            (function(d, s, id){
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) {return;}
-                js = d.createElement(s); js.id = id;
-                js.src = "https://connect.facebook.net/en_US/sdk.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-            */
-        </script>
-        
-        <fb:login-button 
-        scope="public_profile,email"
-        onlogin="checkLoginState();">
-        </fb:login-button>
-
-    
-     -->
-
-=======
-        x: <input id ="userpixx" type="text" value="20"><br>
-        y: <input id ="userpixy" type="text" value="20"><br>
+         color: <input id ="colorselect" type="text" value="green"><br>
+         x: <input id ="userpixx" type="text" value="40"><br>
+         y: <input id ="userpixy" type="text" value="30"><br>
       </form>
-        
+
       <div id="vm">
-        <button @click="subscribe">subscribe</button>
-        <button @click="publish">Publish</button>
-        <div class="sub" v-html="buff"></div>
-        <input type="text" id="text"> 
+         <button @click="subscribe">subscribe</button>
+         <button @click="publish">Publish</button>
+         <div class="sub" v-html="buff"></div>
+         <input type="text" id="text"> 
       </div>
+
       <button id = "load" class="btn waves-effect waves-light" type="load" name="action">load</button>
->>>>>>> 93071c61071db6628ec5ad1f84b0262151d84458
+      <script type="text/javascript" src="javascript/vue.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
 
-    <script type="text/javascript" src="javascript/vue.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-
-    </body>
+   </body>
 </html>
